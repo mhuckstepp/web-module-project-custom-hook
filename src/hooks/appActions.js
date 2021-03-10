@@ -3,7 +3,6 @@ import axios from "axios";
 
 function useAppActions() {
   const [coinData, setCoinData] = useState([]);
-  const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
     axios
@@ -14,7 +13,7 @@ function useAppActions() {
       .catch((err) => console.log(err));
   }, []);
 
-  return [coinData, darkMode, setDarkMode];
+  return [coinData];
 }
 
 export default useAppActions;

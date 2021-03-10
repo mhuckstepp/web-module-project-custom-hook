@@ -8,11 +8,12 @@ import Navbar from "./components/Navbar";
 import "./styles.scss";
 
 const App = () => {
-  const [coinData, darkMode, setDarkMode] = useAppActions();
-
+  const [coinData] = useAppActions();
+  const [storedVal, setMode] = useDarkMode();
+  console.log(storedVal);
   return (
-    <div className={darkMode ? "dark-mode App" : "App"}>
-      <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
+    <div className={storedVal ? "dark-mode App" : "App"}>
+      <Navbar value={storedVal} setMode={setMode} />
       <Charts coinData={coinData} />
     </div>
   );

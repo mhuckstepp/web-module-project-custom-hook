@@ -1,7 +1,7 @@
-import useLocalStorage from "./appActions";
+import useLocalStorage from "./useLocalStorage";
 
-function useDarkMode(key) {
-  const [darkOn, setDarkOn] = useLocalStorage(key);
+export default function useDarkMode() {
+  const [storedVal, setMode] = useLocalStorage("Dark Mode", false);
+
+  return [storedVal, setMode];
 }
-
-export default useDarkMode;
